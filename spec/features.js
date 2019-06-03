@@ -9,7 +9,7 @@ describe('feature tests', function(){
   });
 
   it('should adjust the balance when the account has been credited', function(){
-    account.transaction(credit);
+    account.processTransaction(credit);
 
     expect(account.showBalance()).toEqual(500)
   });

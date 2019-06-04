@@ -1,5 +1,6 @@
 var Account = function(){
     this.balance = 0
+    this.accountStatement = [['date', 'debit', 'credit', 'balance']]
 };
 
 Account.prototype = {
@@ -9,7 +10,13 @@ Account.prototype = {
   },
 
   processTransaction: function(transaction){
-    this.balance += transaction.amount
+    this.balance += transaction.amount;
+  },
+
+  printStatement: function(){
+    return this.accountStatement[0].join(' || ')
   }
+
+
 
 };

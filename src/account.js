@@ -10,7 +10,8 @@ Account.prototype = {
   },
 
   processTransaction: function(transaction){
-    this.balance += transaction.amount;
+    this.balance += parseInt(transaction.amount);
+
   },
 
   printStatement: function(){

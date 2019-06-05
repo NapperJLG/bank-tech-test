@@ -11,13 +11,15 @@ Account.prototype = {
 
   processTransaction: function(transaction){
     this.balance += parseInt(transaction.amount);
-
+    this.addBalanceToTransactionDetails(transaction);
   },
 
   printStatement: function(){
     return this.accountStatement[0].join(' || ')
+  },
+
+  addBalanceToTransactionDetails: function(transaction){
+    transaction.transactionDetails.push(this.balance.toFixed(2))
   }
-
-
 
 };

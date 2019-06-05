@@ -24,5 +24,15 @@ describe('account', function() {
     it('prints the column headers to the console', function() {
       expect(account.printStatement()).toEqual('date || debit || credit || balance')
     });
+
+
+  });
+
+  describe('addBalanceToTransactionDetails', function(){
+    it('adds the updated balance to the latest transaction', function(){
+      credit = new Credit(100);
+      account.processTransaction(credit);
+      expect(credit.transactionDetails).toEqual(['6/4/2019', ' || ', '100.00', '100.00'])
+    });
   });
 });

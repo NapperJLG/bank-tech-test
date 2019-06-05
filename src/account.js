@@ -16,7 +16,10 @@ Account.prototype = {
   },
 
   printStatement: function(){
-    return this.accountStatement[0].join(' || ')
+    this.accountStatement.forEach(function(transaction){
+      console.log(transaction.join(' || '));
+      });
+
   },
 
   addBalanceToTransactionDetails: function(transaction){

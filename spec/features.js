@@ -21,5 +21,13 @@ describe('feature tests', function(){
     expect(account.showBalance()).toEqual(-300.00)
   });
 
+  it('should print out the statement of previous transactions in a table format', function(){
+    account.processTransaction(credit);
+    expect(account.printStatement()).toEqual(
+      'date || debit || credit || balance 6/5/2019 || || 100.00 || 100.00')
+  });
+
+
+
 
 });

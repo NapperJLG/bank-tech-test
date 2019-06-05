@@ -32,7 +32,20 @@ describe('account', function() {
     it('adds the updated balance to the latest transaction', function(){
       credit = new Credit(100);
       account.processTransaction(credit);
-      expect(credit.transactionDetails).toEqual(['6/4/2019', ' || ', '100.00', '100.00'])
+      expect(credit.transactionDetails).toEqual(['6/5/2019', ' || ', '100.00', '100.00'])
     });
+  });
+
+  describe('addTransactionDetailsToStatement', function(){
+    it('adds transaction details to account statement', function(){
+      credit = new Credit(100);
+      account.processTransaction(credit);
+      expect(account.accountStatement).toEqual([
+        ['date', 'debit', 'credit', 'balance'],
+        ['6/5/2019', ' || ', '100.00', '100.00']
+        ])
+    })
+
+
   });
 });

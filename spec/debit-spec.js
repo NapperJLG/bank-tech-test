@@ -14,7 +14,7 @@ describe('debit', function(){
   });
 
   it('stores the details of a transaction in statement format', function(){
-    expect(debit.transactionDetails).toEqual(['6/4/2019', '-200.50', ' || '])
+    expect(debit.transactionDetails).toEqual(['6/5/2019', '-200.50', ' || '])
   });
 
 });

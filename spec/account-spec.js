@@ -20,6 +20,14 @@ describe('account', function() {
 
   });
 
+  describe('processTransaction', function(){
+    it('updates the balance to two decimal places', function(){
+      credit = new Credit(100.50);
+      account.processTransaction(credit);
+      expect(account.balance).toEqual(100.50)
+    });
+  });
+
   describe('printStatement', function() {
     it('prints the column headers to the console', function() {
       expect(account.printStatement()).toEqual('date || debit || credit || balance')

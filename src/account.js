@@ -10,7 +10,7 @@ Account.prototype = {
   },
 
   processTransaction: function(transaction){
-    this.balance += parseInt(transaction.amount);
+    this.balance += parseFloat(transaction.amount);
     this.addBalanceToTransactionDetails(transaction);
     this.addTransactionDetailsToStatement(transaction)
   },
